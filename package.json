@@ -1,0 +1,41 @@
+{
+  "name": "broker-cli",
+  "description": "A CLI tool to interact with our broker",
+  "exports": "./dist/index.js",
+  "contributors": [
+    {
+      "name": "Tony Di Benedetto",
+      "email": "tonyblast@gmail.com"
+    }
+  ],
+  "scripts": {
+    "build": "rm -R dist && tsc",
+    "broker": "ts-node -r dotenv/config src/index.ts",
+    "test:typecheck": "tsc --noEmit",
+    "test:lint": "eslint . --ext .ts",
+    "test:lint:fix": "eslint . --ext .ts --fix"
+  },
+  "dependencies": {
+    "amqplib": "^0.10.3",
+    "cli-progress": "^3.12.0",
+    "node-emoji": "^2.1.0"
+  },
+  "devDependencies": {
+    "@types/amqplib": "^0.10.3",
+    "@types/cli-progress": "^3.11.0",
+    "@types/inquirer": "^9.0.3",
+    "@types/node": "^18.18.7",
+    "@typescript-eslint/eslint-plugin": "^6.4.0",
+    "@typescript-eslint/parser": "^6.4.0",
+    "dotenv": "^16.3.1",
+    "eslint": "^8.47.0",
+    "eslint-config-prettier": "^8.9.0",
+    "eslint-plugin-prettier": "^5.0.0",
+    "prettier": "^3.0.2",
+    "ts-node": "^10.9.1",
+    "typescript": "^5.1.6"
+  },
+  "engines": {
+    "node": ">=18"
+  }
+}
